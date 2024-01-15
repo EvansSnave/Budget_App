@@ -7,6 +7,8 @@ gem 'rails', '~> 7.1.2'
 
 gem 'rubocop'
 
+gem 'devise'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
