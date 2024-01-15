@@ -25,7 +25,7 @@
   - [📝 License ](#-license-)
 
 # 📖Bundle App<a name="about-project"></a>
-> `Bundle App` is a rails application which allows customers to create transactions and the money they've spent on them. They will be able to create new transactions with categories.
+> `Bundle App` is a rails application which allows customers to create transactions and the money they've spent on them. They will be able to create new transactions with categories. Original idea from Gregoire Vella on Behance.
 
 ## 🛠 Built With <a name="built-with"></a>
 
