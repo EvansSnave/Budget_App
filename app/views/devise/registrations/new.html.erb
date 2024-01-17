@@ -3,13 +3,8 @@
 <%= form_for(resource, as: resource_name, url: new_register_path) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div>
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
-
-  <div>
-    <%= f.label :full_name %><br />
-    <%= f.text_field :full_name %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
