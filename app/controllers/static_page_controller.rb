@@ -1,3 +1,5 @@
 class StaticPageController < ApplicationController
-  def home; end
+  def splash_screen; end
+
+  def show; end
 end
