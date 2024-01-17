@@ -1,7 +1,16 @@
-<h2>Sign up</h2>
+<h2>REGISTER</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: new_register_path) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div>
+    <%= f.label :full_name %><br />
+    <%= f.text_field :full_name %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
