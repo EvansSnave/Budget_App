@@ -1,0 +1,274 @@
+<style>
+body, html {
+  margin: 0;
+   }
+
+   .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.mt-4 {
+  margin-top: 0 !important;
+}
+
+
+  .navbar {
+  width: 100%;
+   }
+
+  .login-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+  }
+
+  .login-nav span,
+  .navbar-brand,
+  .login-btn {
+      font-family: 'Proxima Nova', sans-serif; 
+      font-weight: bold; 
+      color: white; 
+  }
+
+  .navbar-brand {
+      font-size: 24px; 
+      text-decoration: none;
+  }
+
+  .navbar-text {
+    justify-content: center;
+    margin: 0;
+    margin-left: 70px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+  .login-btn {
+      background: none; 
+      border: none; 
+      text-decoration: none; 
+  }
+
+   a {
+      text-decoration: none; 
+      color: lightgray; 
+      text-align: center; 
+      align-items: center; 
+      margin: 5px 10px; 
+      font-family: 'Proxima Nova', sans-serif;
+
+   }
+
+   .centered-links {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-links a {
+  pointer-events: auto; 
+}
+
+.form-wrapper {
+margin-top: 20px;
+}
+
+      .form-control {
+          width: 100%;
+          font-size: 16px;
+          padding: 12px 20px;
+          border: 1px solid lightgray;  
+      }
+      
+      .btn-primary {
+          font-size: 16px;
+          padding: 12px 20px;
+      }
+
+    .category-block {
+        border: 1px solid lightgray;
+        padding: 15px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .category-block i {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .category-details {
+        display: flex;
+        justify-content: space-between;
+        width: 100%
+    }
+
+    .category-link {
+        text-align: center;
+        width: 100%
+        margin-top: 15px;
+    }
+
+    .horizontal-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;  
+}
+
+.main-logo {
+    position: absolute;
+    bottom: -200px;
+    right: 165px;
+    width: 70px; 
+    height: auto;
+}
+
+.btn-primary {
+    background-color: #5fb523; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    text-align: center;
+}
+
+.icon-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.icon-item:hover {
+    background-color: #f2f2f2;
+}
+
+.form-control {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;  
+    border-radius: 0;  
+    box-shadow: none;  /* Elimina la sombra */
+    background-color: #f3f3f3; 
+    box-sizing: border-box; 
+}
+
+.form-group {
+    margin-bottom: 20px; 
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.form-group.mt-4 {
+    text-align: center;
+    position: fixed;
+    right: 160px;
+}
+.btn-secondary {
+  position: fixed;
+  right: 170px;
+  background-color: #3778c2;
+  border: none;
+}
+
+.back-btn-top-left {
+    position: absolute;
+    top: 10px;
+    right: 340px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.footer-logo {
+    position: relative;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+</style>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg" style="background-color: #3778c2; padding: 20px 0">
+        <div class="login-nav">
+            <span class="navbar-text">
+                Add New Category
+            </span>
+            <% if user_signed_in? %>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "login-btn" %>
+            <% end %>
+        </div>
+    </nav>
+
+    <div class="form-wrapper mt-3">
+
+        <%= form_for @group, html: { class: 'mt-3' } do |f| %>
+            <% if @group.errors.any? %>
+                <div class="alert alert-danger">
+                    <h2><%= pluralize(@group.errors.count, "error") %> prohibited this category from being saved:</h2>
+                    <ul>
+                        <% @group.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="form-group">
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Name your new category' %>
+        </div>
+        
+
+            <div class="form-group">
+            <div class="horizontal-center">
+            <%= f.label :icon, "Choose an icon" %>
+        </div>
+            <div class="icon-list">
+                <% @available_icons.each do |icon| %>
+                    <div class="icon-item">
+                        <%= radio_button_tag 'group[icon]', icon, false, id: "icon_#{icon.gsub(' ', '_')}" %>
+                        <%= label_tag "icon_#{icon.gsub(' ', '_')}", "<i class='#{icon} mr-1'></i>".html_safe %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+        
+
+            <div class="form-group mt-4">
+                <%= f.submit "Save", class: 'mt-5 btn btn-primary' %>
+            </div>
+        <% end %>
+
+        <!-- Utilizando la clase para centrar "Back" -->
+        <div class="horizontal-center">
+        <%= link_to '<', root_path, class: "btn btn-secondary back-btn-top-left" %>
+
+        </div>
+    </div>
+    <div class="footer-logo">
+    <img src="<%= asset_path 'actions-logo-noback.PNG' %>" alt="Actions App Logo" class="main-logo">
+</div>
+</div>

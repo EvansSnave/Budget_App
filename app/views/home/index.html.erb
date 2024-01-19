@@ -1,0 +1,61 @@
+<style>
+    body {
+        font-family: 'Arial', sans-serif; 
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9; 
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .main-logo {
+        max-width: 200px;
+        margin-bottom: 40px;
+    }
+    .main-title {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #333; 
+    }
+    .main-subtitle {
+        font-size: 18px;
+        margin-bottom: 40px;
+        color: #777; 
+        text-align: center;
+    }
+    .main-btn, .main-btn-outline {
+        text-decoration: none;
+    }
+    .main-btn {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 15px;
+        padding: 15px;
+        font-size: 18px; 
+        border-radius: 5px; 
+        display: block;
+        text-align: center;
+    }
+    .main-btn {
+        background-color: #3778c2;
+        color: #fff;
+        border: none;
+    }
+    .main-btn-outline {
+        background-color: transparent;
+        color: #3778c2;
+    }
+</style>
+
+
+<div class="main-container">
+    <!-- Logo de la aplicación -->
+    <img src="<%= asset_path 'actions-logo-noback.PNG' %>" alt="Actions App Logo" class="main-logo">
+
+    <%= link_to "LOG IN", new_user_session_path, class: "btn btn-primary btn-lg main-btn" %>
+    <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-outline-primary btn-lg main-btn main-btn-outline" %>
+</div>
