@@ -1,26 +1,127 @@
-<h2>LOGIN</h2>
+<style>
+     body, html {
+    margin: 0;
+    padding: 0;
+     }
 
-<%= form_for(resource, as: resource_name, url: new_login_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+     .container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm {
+      padding-right: 0;
+      padding-left: 0;
+  }
+  
+  .mt-4 {
+    margin-top: 0 !important;
+}
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
+    .navbar {
+    width: 100%;
+     }
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    .login-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-<%= render "devise/shared/links" %>
+    .login-nav span,
+    .navbar-brand,
+    .login-btn {
+        font-family: 'Proxima Nova', sans-serif; 
+        font-weight: bold; 
+        color: white; 
+    }
+
+    .navbar-brand {
+        font-size: 24px; 
+        text-decoration: none;
+    }
+
+    .login-btn {
+        background: none; 
+        border: none; 
+        text-decoration: none; 
+    }
+
+     a {
+        text-decoration: none; 
+        color: lightgray; 
+        text-align: center; 
+        align-items: center; 
+        margin: 5px 10px; 
+        font-family: 'Proxima Nova', sans-serif;
+
+     }
+
+     .centered-links {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 132vh;           
+    position: absolute;      
+    top: 0;
+    left: 0;
+    width: 100%;            
+    pointer-events: none;    
+}
+
+.centered-links a {
+    pointer-events: auto;   
+}
+
+.form-wrapper {
+  margin-top: 20px; 
+}
+
+        .form-control {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: 1px solid lightgray;  
+        }
+        
+        .btn-primary {
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+    
+</style>
+
+<div class="container">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'mt-4'}) do |f| %>
+        <nav class="navbar navbar-expand-lg" style="background-color: #3778c2;">
+            <div class="login-nav">
+                <%= link_to '<', root_path, class: "navbar-brand" %>
+                <span class="navbar-text">
+                    LOGIN
+                </span>
+                <%= f.submit "Log in", class: "login-btn" %>
+            </div>
+        </nav>
+
+        <div class="mt-3">
+            <!-- Envoltorio para las barras de email y contraseña -->
+            <div class="form-wrapper">
+                <div class="form-group">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email", style: "color: lightgray;" %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', placeholder: "Password", style: "color: lightgray;" %>
+                </div>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+                <div class="form-check">
+                    <%= f.check_box :remember_me, class: 'form-check-input' %>
+                    <%= f.label :remember_me, class: 'form-check-label' %>
+                </div>
+            <% end %>
+        </div>
+
+        <div class="centered-links">
+            <%= render "devise/shared/links" %>
+        </div>
+    <% end %>
+</div>

@@ -1,16 +1,120 @@
-<h2>Forgot your password?</h2>
+<style>
+     body, html {
+    margin: 0;
+     }
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    .navbar {
+    width: 100%;
+     }
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    /* Estilos para centrar el título LOGIN */
+    .login-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+    .login-nav span,
+    .navbar-brand,
+    .login-btn {
+        font-family: 'Proxima Nova', sans-serif; /* Cambio de tipografía */
+        font-weight: bold; /* Estilo bold */
+        color: white; /* Color blanco */
+    }
 
-<%= render "devise/shared/links" %>
+    .navbar-brand {
+        font-size: 24px; /* Tamaño de letra más grande */
+        text-decoration: none;
+    }
+
+    .login-btn {
+        background: none; /* Elimina el fondo */
+        border: none; /* Elimina el borde */
+        text-decoration: none; /* Elimina el subrayado */
+    }
+
+     a {
+        text-decoration: none; /* Elimina el subrayado */
+        color: lightgray; /* Cambia el color a gris */
+        text-align: center; /* Centra el texto */
+        align-items: center; /* Centra el contenido */
+        margin: 5px 10px; /* Centra el elemento */
+        font-family: 'Proxima Nova', sans-serif;
+
+     }
+
+     .centered-links {
+    display: flex;
+    justify-content: center; /* Alinea los elementos en el eje horizontal */
+    align-items: center;     /* Alinea los elementos en el eje vertical */
+    height: 100vh;           /* Toma toda la altura de la ventana */
+    position: absolute;      /* Posicionamiento absoluto */
+    top: 0;
+    left: 0;
+    width: 100%;             /* Toma todo el ancho de la ventana */
+    pointer-events: none;    /* Asegura que los clicks pasen a través del contenedor */
+}
+
+.centered-links a {
+    pointer-events: auto;    /* Habilita los clicks en los enlaces */
+}
+
+.form-wrapper {
+  margin-top: 20px;  /* Añadir una pequeña separación en la parte superior */
+}
+
+        .form-control {
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: 1px solid lightgray;  
+        }
+        
+        .btn-primary {
+            font-size: 16px;
+            padding: 12px 20px;
+        }
+        .password-recovery-title {
+        text-align: center;
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: 24px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .password-recovery-btn {
+        background: #3778c2;
+        border: none;
+        color: white;
+        font-family: 'Proxima Nova', sans-serif;
+        font-size: 16px;
+        padding: 12px 20px;
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+<div class="container mt-5">
+    <h2 class="password-recovery-title">Forgot your password?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="form-wrapper">
+            <div class="form-group">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email", style: "color: lightgray;" %>
+            </div>
+
+            <div class="actions">
+                <%= f.submit "Send me reset password instructions", class: "password-recovery-btn" %>
+            </div>
+        </div>
+    <% end %>
+
+    <div class="centered-links">
+        <%= render "devise/shared/links" %>
+    </div>
+</div>
