@@ -1,13 +1,13 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Bundle App</b></h3>
+  <h3><b>Budget App</b></h3>
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Bundle App](#bundle-app)
+- [📖 Budget App](#budget-app)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -24,8 +24,8 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖Bundle App<a name="about-project"></a>
-> `Bundle App` is a rails application which allows customers to create transactions and the money they've spent on them. They will be able to create new transactions with categories. Original idea from Gregoire Vella on Behance.
+# 📖Budget App<a name="about-project"></a>
+> `Budget App` is a rails application which allows customers to create transactions and the money they've spent on them. They will be able to create new transactions with categories. Original idea from Gregoire Vella on Behance.
 
 ## 🛠 Built With <a name="built-with"></a>
 
