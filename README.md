@@ -1,13 +1,13 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Bundle App</b></h3>
+  <h3><b>Budget App</b></h3>
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Bundle App](#bundle-app)
+- [📖 Budget App](#bundle-app)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
