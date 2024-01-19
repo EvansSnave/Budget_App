@@ -104,6 +104,7 @@ To run the project, execute the following command:
 
   - Run the command `rails server`
   - Start the rails server and append the corresponding `urls pattern`.
+Preview [here](https://budget-app-za5v.onrender.com/)
 
 ### Test
 
