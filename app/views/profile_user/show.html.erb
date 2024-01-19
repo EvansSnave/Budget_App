@@ -1,0 +1,17 @@
+<section class="categories">
+  <div class="category-title">
+    <p>Category</p>
+  </div>
+  <div class="categories-done">
+    <div class="categories-section">
+      <div class="categories-subsection">
+        <%= image_tag "categories/bird.png", height: "120px", class: "icon" %>
+        <%= @user.name %>
+      </div>
+      <%= link_to 'LOG OUT', logout_path, method: :delete %>
+    </div>
+    <div class="categories-section">
+      hello
+    </div>
+  </div>
+</section>

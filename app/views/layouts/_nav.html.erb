@@ -1,0 +1,14 @@
+<% if current_user %>
+  <nav>
+    <div class="nav-links">
+      <%= image_tag "burger-menu.png", height: "40px", class: "icon-nav" %>
+      <h2>TRANSACTIONS</h2>
+      <%= image_tag "search.png", height: "40px", class: "icon-nav" %>
+    </div>
+    <div class="nav-space">
+      <%= image_tag "left-caret.png", height: "30px", class: "icon-nav" %>
+      <p>Most recent</p>
+      <%= image_tag "right-caret.png", height: "30px", class: "icon-nav" %>
+    </div>
+  </nav>
+<% end %>

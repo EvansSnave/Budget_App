@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'profile', to: 'static_page#show'
+  get 'profile', to: 'profile_user#show'
   
   as :user do
     get 'register', to: 'devise/registrations#new', as: :new_register
